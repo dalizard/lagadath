@@ -2,4 +2,4 @@
 package.loaded['lagadath.palette'] = nil
 package.loaded['lagadath.theme'] = nil
 
-require("lagadath").load()
+require("lagadath").setup()

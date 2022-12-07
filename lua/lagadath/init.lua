@@ -1,6 +1,6 @@
 local M = {}
 
-M.load = function()
+M.setup = function()
   if vim.g.colors_name then
     vim.cmd("hi clear")
   end
