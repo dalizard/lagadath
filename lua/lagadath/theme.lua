@@ -85,7 +85,7 @@ function M.get()
     Number = { fg = p.gold },
     Operator = { fg = p.love },
     PreCondit = { fg = p.iris },
-    PreProc = { fg = p.iris },
+    PreProc = { fg = p.subtle },
     Repeat = { fg = p.pine },
     Special = { fg = p.love },
     SpecialChar = { fg = p.rose },
