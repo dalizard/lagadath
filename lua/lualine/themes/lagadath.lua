@@ -6,6 +6,7 @@ return {
     a = { bg = p.highlight_low, fg = p.rose, gui = 'bold' },
     b = { bg = p.highlight_low, fg = p.text },
     c = { bg = p.highlight_low, fg = p.subtle, gui = 'italic' },
+    z = { bg = p.highlight_low, fg = p.subtle },
   },
   insert = {
     a = { bg = p.highlight_low, fg = p.foam, gui = 'bold' },

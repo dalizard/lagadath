@@ -34,7 +34,7 @@ function M.get()
     NormalFloat = { fg = p.love },
     NormalNC = { fg = p.text, bg = p.base },
     NvimInternalError = { fg = '#ffffff', bg = p.love },
-    Pmenu = { fg = blend(p.base, p.subtle, 0.5), bg = blend(p.highlight_low, p.base, 0.3) },
+    Pmenu = { fg = p.text, bg = blend(p.highlight_low, p.base, 0.3) },
     PmenuSbar = { bg = p.highlight_low },
     PmenuSel = { fg = p.love, bg = blend(p.highlight_low, p.base, 1) },
     PmenuThumb = { bg = p.highlight_med },
@@ -362,8 +362,8 @@ function M.get()
   vim.g.terminal_color_12 = p.foam -- bright blue
   vim.g.terminal_color_5 = p.iris -- magenta
   vim.g.terminal_color_13 = p.iris -- bright magenta
-  vim.g.terminal_color_6 = p.subtle -- cyan
-  vim.g.terminal_color_14 = p.subtle -- bright cyan
+  vim.g.terminal_color_6 = p.aqua -- cyan
+  vim.g.terminal_color_14 = p.aqua -- bright cyan
   vim.g.terminal_color_7 = p.text -- white
   vim.g.terminal_color_15 = p.text -- bright white
 
