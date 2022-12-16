@@ -4,9 +4,9 @@ local blend = require('lagadath.util').blend
 return {
   normal = {
     a = { bg = p.highlight_low, fg = p.rose, gui = 'bold' },
-    b = { bg = p.highlight_low, fg = p.text },
-    c = { bg = p.highlight_low, fg = p.subtle, gui = 'italic' },
-    z = { bg = p.highlight_low, fg = p.subtle },
+    b = { bg = p.highlight_low, fg = blend(p.highlight_high, p.text, 0.5) },
+    c = { bg = p.highlight_low, fg = blend(p.highlight_high, p.text, 0.5) },
+    z = { bg = p.highlight_low, fg = blend(p.highlight_high, p.text, 0.5) },
   },
   insert = {
     a = { bg = p.highlight_low, fg = p.foam, gui = 'bold' },
@@ -21,8 +21,8 @@ return {
     a = { bg = p.highlight_low, fg = p.love, gui = 'bold' },
   },
   inactive = {
-    a = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.subtle, gui = 'bold' },
-    b = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.subtle },
-    c = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.subtle, gui = 'italic'},
+    a = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.highlight_high },
+    b = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.highlight_high },
+    c = { bg = blend(p.highlight_low, p.base, 0.3), fg = p.highlight_high },
   },
 }
