@@ -1,4 +1,4 @@
-local util = {}
+local Util = {}
 
 local function byte(value, offset)
   return bit.band(bit.rshift(value, offset), 0xFF)
@@ -29,7 +29,7 @@ local function parse_color(color)
   return color
 end
 
-util.blend = function(fg, bg, alpha)
+Util.blend = function(fg, bg, alpha)
   fg = rgb(parse_color(fg))
   bg = rgb(parse_color(bg))
 
@@ -38,15 +38,10 @@ util.blend = function(fg, bg, alpha)
     return math.floor(math.min(math.max(0, ret), 255) + 0.5)
   end
 
-  return string.format(
-    '#%02X%02X%02X',
-    blend_channel(1),
-    blend_channel(2),
-    blend_channel(3)
-  )
+  return string.format('#%02X%02X%02X', blend_channel(1), blend_channel(2), blend_channel(3))
 end
 
-util.highlight = function(group, color)
+Util.highlight = function(group, color)
   local style = color.style and 'gui=' .. color.style or 'gui=NONE'
   local fg = color.fg and 'guifg=' .. parse_color(color.fg) or 'guifg=NONE'
   local bg = color.bg and 'guibg=' .. parse_color(color.bg) or 'guibg=NONE'
@@ -59,4 +54,4 @@ util.highlight = function(group, color)
   end
 end
 
-return util
+return Util

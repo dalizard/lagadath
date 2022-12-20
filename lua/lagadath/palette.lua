@@ -1,4 +1,4 @@
-local variants = {
+local colors = {
   dark = {
     aqua = '#689d6a',
     base = '#282828',
@@ -42,9 +42,9 @@ local variants = {
 local palette = {}
 
 if vim.o.background == 'light' then
-  palette = variants.light
+  palette = colors.light
 else
-  palette = variants.dark
+  palette = colors.dark
 end
 
 return palette

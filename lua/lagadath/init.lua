@@ -5,7 +5,7 @@ M.setup = function()
     vim.cmd("hi clear")
   end
 
-  vim.g.colors_name = "lagadath"
+  vim.g.colors_name = 'lagadath'
   vim.o.termguicolors = true
 
   local theme = require('lagadath.theme').get()
