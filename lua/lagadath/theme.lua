@@ -30,7 +30,7 @@ function M.get()
     MoreMsg = { fg = p.iris },
     NonText = { fg = p.muted },
     Normal = { fg = p.text, bg = p.base },
-    NormalFloat = { fg = p.love },
+    NormalFloat = { fg = p.love, bg = blend(p.highlight_med, p.base, 0.2) },
     NormalNC = { fg = p.text, bg = p.base },
     NvimInternalError = { fg = '#ffffff', bg = p.love },
     Pmenu = { fg = p.text, bg = blend(p.highlight_low, p.base, 0.3) },
@@ -259,7 +259,7 @@ function M.get()
     LspReferenceWrite = { bg = p.highlight_med },
 
     -- lsp-highlight-codelens
-    LspCodeLens = { fg = p.subtle }, -- virtual text of code lens
+    LspCodeLens = { fg = p.subtle },                  -- virtual text of code lens
     LspCodeLensSeparator = { fg = p.highlight_high }, -- separator between two or more code lens
 
     -- lewis6991/gitsigns.nvim
@@ -350,21 +350,21 @@ function M.get()
 
   -- Terminal
   vim.g.terminal_color_0 = p.overlay -- black
-  vim.g.terminal_color_8 = p.subtle -- bright black
-  vim.g.terminal_color_1 = p.pine -- red
-  vim.g.terminal_color_9 = p.pine -- bright red
-  vim.g.terminal_color_2 = p.rose -- green
-  vim.g.terminal_color_10 = p.rose -- bright green
-  vim.g.terminal_color_3 = p.gold -- yellow
-  vim.g.terminal_color_11 = p.gold -- bright yellow
-  vim.g.terminal_color_4 = p.foam -- blue
-  vim.g.terminal_color_12 = p.foam -- bright blue
-  vim.g.terminal_color_5 = p.iris -- magenta
-  vim.g.terminal_color_13 = p.iris -- bright magenta
-  vim.g.terminal_color_6 = p.aqua -- cyan
-  vim.g.terminal_color_14 = p.aqua -- bright cyan
-  vim.g.terminal_color_7 = p.text -- white
-  vim.g.terminal_color_15 = p.text -- bright white
+  vim.g.terminal_color_8 = p.subtle  -- bright black
+  vim.g.terminal_color_1 = p.pine    -- red
+  vim.g.terminal_color_9 = p.pine    -- bright red
+  vim.g.terminal_color_2 = p.rose    -- green
+  vim.g.terminal_color_10 = p.rose   -- bright green
+  vim.g.terminal_color_3 = p.gold    -- yellow
+  vim.g.terminal_color_11 = p.gold   -- bright yellow
+  vim.g.terminal_color_4 = p.foam    -- blue
+  vim.g.terminal_color_12 = p.foam   -- bright blue
+  vim.g.terminal_color_5 = p.iris    -- magenta
+  vim.g.terminal_color_13 = p.iris   -- bright magenta
+  vim.g.terminal_color_6 = p.aqua    -- cyan
+  vim.g.terminal_color_14 = p.aqua   -- bright cyan
+  vim.g.terminal_color_7 = p.text    -- white
+  vim.g.terminal_color_15 = p.text   -- bright white
 
   return theme
 end
