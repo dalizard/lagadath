@@ -190,6 +190,7 @@ function M.get()
     ['@debug'] = { link = 'Debug' },
     ['@define'] = { link = 'Define' },
     ['@exception'] = { link = 'Exception' },
+    ['@error'] = { link = 'Error' },
     ['@field'] = { link = 'Identifier' },
     ['@float'] = { link = 'Float' },
     ['@function'] = { link = 'Function' },
@@ -252,8 +253,6 @@ function M.get()
     ['@text.strike'] = { strikethrough = true },
     ['@text.strong'] = { bold = true },
     ['@text.underline'] = { underline = true },
-
-    TSError = { fg = p.pine },
 
     -- vim.lsp.buf.document_highlight()
     LspReferenceText = { bg = p.highlight_med },
