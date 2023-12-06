@@ -253,6 +253,8 @@ function M.get()
     ['@text.strong'] = { bold = true },
     ['@text.underline'] = { underline = true },
 
+    TSError = { fg = p.pine },
+
     -- vim.lsp.buf.document_highlight()
     LspReferenceText = { bg = p.highlight_med },
     LspReferenceRead = { bg = p.highlight_med },
