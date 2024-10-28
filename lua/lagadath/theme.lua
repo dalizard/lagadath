@@ -177,82 +177,136 @@ function M.get()
     healthWarning = { fg = p.gold },
 
     -- Treesitter
-    ['@attribute'] = { link = 'PreProc' },
-    ['@boolean'] = { link = 'Boolean' },
-    ['@character'] = { link = 'Character' },
-    ['@character.special'] = { link = 'SpecialChar' },
-    ['@comment'] = { link = 'Comment' },
-    ['@conditional'] = { link = 'Conditional' },
+
+    ---- Identifiers
+    ['@variable'] = { fg = p.text, style = 'italic' },
+    ['@variable.builtin'] = { link = 'Special' },
+    ['@variable.parameter'] = { link = 'Identifier' },
+    ['@variable.parameter.builtin'] = { link = 'Identifier' },
+    ['@variable.member'] = { link = '@variable' },
+
     ['@constant'] = { link = 'Constant' },
     ['@constant.builtin'] = { link = 'Special' },
     ['@constant.macro'] = { link = 'Define' },
-    ['@constructor'] = { link = 'Special' },
-    ['@debug'] = { link = 'Debug' },
-    ['@define'] = { link = 'Define' },
-    ['@exception'] = { link = 'Exception' },
-    ['@error'] = { link = 'Error' },
-    ['@field'] = { link = 'Identifier' },
-    ['@float'] = { link = 'Float' },
+
+    ['@module'] = { link = 'Include' },
+    ['@module.builtin'] = { link = 'Function' },
+    ['@label'] = { link = 'Label' },
+
+    ---- Literals
+    ['@string'] = { link = 'String' },
+    ['@string.documentation'] = { link = 'String' },
+    ['@string.escape'] = { link = 'SpecialChar' },
+    ['@string.regexp'] = { link = 'String' },
+    ['@string.special'] = { link = 'SpecialChar' },
+    ['@string.special.symbol'] = { link = 'String' },
+    ['@string.special.url'] = { link = 'String' },
+    ['@string.special.path'] = { link = 'String' },
+
+    ['@character'] = { link = 'Character' },
+    ['@character.special'] = { link = 'SpecialChar' },
+
+    ['@boolean'] = { link = 'Boolean' },
+    ['@number'] = { link = 'Number' },
+    ['@number.float'] = { link = 'Float' },
+
+    ---- Types
+    ['@type'] = { link = 'Type' },
+    ['@type.builtin'] = { link = 'Type' },
+    ['@type.definition'] = { link = 'Typedef' },
+
+    ['@attribute'] = { link = 'PreProc' },
+    ['@attribute.builtin'] = { link = 'PreProc' },
+    ['@property'] = { link = 'Identifier' },
+
+    ---- Functions
     ['@function'] = { link = 'Function' },
     ['@function.builtin'] = { link = 'Special' },
     ['@function.call'] = { link = 'Function' },
     ['@function.macro'] = { link = 'Macro' },
-    ['@include'] = { link = 'Include' },
-    ['@keyword'] = { link = 'Keyword' },
-    ['@keyword.function'] = { link = 'Keyword' },
-    ['@keyword.return'] = { link = 'Keyword' },
-    ['@label'] = { link = 'Label' },
-    ['@method'] = { link = 'Function' },
-    ['@method.call'] = { link = 'Function' },
-    ['@namespace'] = { link = 'Include' },
-    ['@none'] = { bg = 'NONE', fg = 'NONE' },
-    ['@number'] = { link = 'Number' },
+
+    ['@function.method'] = { link = 'Function' },
+    ['@function.method.call'] = { link = 'Function' },
+
+    ['@constructor'] = { link = 'Special' },
     ['@operator'] = { link = 'Operator' },
-    ['@parameter'] = { link = 'Identifier' },
-    ['@preproc'] = { link = 'PreProc' },
-    ['@property'] = { link = 'Identifier' },
-    ['@punctuation.bracket'] = { link = 'Delimiter' },
+
+    ---- Keywords
+    ['@keyword'] = { link = 'Keyword' },
+    ['@keyword.coroutine'] = { link = 'Keyword' },
+    ['@keyword.function'] = { link = 'Keyword' },
+    ['@keyword.operator'] = { fg = p.subtle },
+    ['@keyword.import'] = { fg = p.subtle },
+    ['@keyword.type'] = { fg = p.subtle },
+    ['@keyword.modifier'] = { fg = p.subtle },
+    ['@keyword.repeat'] = { fg = p.subtle },
+    ['@keyword.return'] = { link = 'Keyword' },
+    ['@keyword.debug'] = { link = 'Keyword' },
+    ['@keyword.exception'] = { link = 'Keyword' },
+
+    ['@keyword.conditional'] = { link = 'Keyword' },
+    ['@keyword.conditional.ternary'] = { link = 'Keyword' },
+
+    ['@keyword.directive'] = { link = 'Keyword' },
+    ['@keyword.directive.define'] = { link = 'Keyword' },
+
+    ---- Punctuation
     ['@punctuation.delimiter'] = { link = 'Delimiter' },
+    ['@punctuation.bracket'] = { link = 'Delimiter' },
     ['@punctuation.special'] = { link = 'Delimiter' },
-    ['@repeat'] = { link = 'Repeat' },
-    ['@storageclass'] = { link = 'StorageClass' },
-    ['@string'] = { link = 'String' },
-    ['@string.escape'] = { link = 'SpecialChar' },
-    ['@string.regex'] = { link = 'String' },
-    ['@string.special'] = { link = 'SpecialChar' },
-    ['@symbol'] = { link = 'Identifier' },
+
+    ---- Comments
+    ['@comment'] = { link = 'Comment' },
+    ['@comment.documentation'] = { link = 'Comment' },
+
+    ['@comment.error'] = { link = 'Comment' },
+    ['@comment.warning'] = { link = 'Comment' },
+    ['@comment.todo'] = { link = 'Comment' },
+    ['@comment.note'] = { link = 'Comment' },
+
+    ---- Markup
+    ['@markup.strong'] = { fg = p.text, bold = true },
+    ['@markup.italic'] = { fg = p.text, italic = true },
+    ['@markup.strikethrough'] = { fg = p.text, strikethrough = true },
+    ['@markup.underline'] = { fg =  p.text, underline = true },
+
+    ['@markup.heading'] = { fg = p.text },
+    ['@markup.heading.1'] = { fg = p.text },
+    ['@markup.heading.2'] = { fg = p.text },
+    ['@markup.heading.3'] = { fg = p.text },
+    ['@markup.heading.4'] = { fg = p.text },
+    ['@markup.heading.5'] = { fg = p.text },
+    ['@markup.heading.6'] = { fg = p.text },
+
+    ['@markup.quote'] = { fg = p.text },
+    ['@markup.math'] = { fg = p.text },
+
+    ['@markup.link'] = { fg = p.text },
+    ['@markup.link.label'] = { fg = p.text },
+    ['@markup.link.url'] = { fg = p.text },
+
+    ['@markup.raw'] = { fg = p.text },
+    ['@markup.raw.block'] = { fg = p.text },
+
+    ['@markup.list'] = { fg = p.text },
+    ['@markup.list.checked'] = { fg = p.text },
+    ['@markup.list.unchecked'] = { fg = p.text },
+
+    ['@diff.plus'] = { fg = p.text },
+    ['@diff.minus'] = { fg = p.text },
+    ['@diff.delta'] = { fg = p.text },
+
     ['@tag'] = { link = 'Tag' },
+    ['@tag.builtin'] = { link = 'Identifier' },
     ['@tag.attribute'] = { link = 'Identifier' },
     ['@tag.delimiter'] = { link = 'Delimiter' },
-    ['@text'] = { fg = p.text },
-    ['@text.danger'] = { link = 'ErrorMsg' },
-    ['@text.diff.add'] = { link = 'diffAdded' },
-    ['@text.diff.delete'] = { link = 'diffRemoved' },
-    ['@text.environment'] = { link = 'Macro' },
-    ['@text.environment.name'] = { link = 'Type' },
-    ['@text.literal'] = { link = 'String' },
-    ['@text.math'] = { link = 'Special' },
-    ['@text.note'] = { link = 'SpecialComment' },
-    ['@text.reference'] = { link = 'Constant' },
-    ['@text.title'] = { link = 'Title' },
-    ['@text.todo'] = { link = 'Todo' },
-    ['@text.todo.checked'] = { link = 'Done' },
-    ['@text.todo.unchecked'] = { link = 'Todo' },
-    ['@text.uri'] = { link = 'Underlined' },
-    ['@text.warning'] = { link = 'WarningMsg' },
-    ['@type'] = { link = 'Type' },
-    ['@type.builtin'] = { link = 'Type' },
-    ['@type.definition'] = { link = 'Typedef' },
-    ['@type.qualifier'] = { link = 'Type' },
-    ['@variable'] = { fg = p.text, style = 'italic' },
-    ['@variable.builtin'] = { link = 'Special' },
 
-    -- nvim-treesitter (0.8 overrides)
-    ['@keyword.operator'] = { fg = p.subtle },
-    ['@text.emphasis'] = { italic = true },
-    ['@text.strike'] = { strikethrough = true },
-    ['@text.strong'] = { bold = true },
-    ['@text.underline'] = { underline = true },
+    ---- Non-highlight capture
+    ['@none'] = { bg = 'NONE', fg = 'NONE' },
+    ['@conceal'] = { bg = 'NONE', fg = 'NONE' },
+
+    ['@spell'] = { bg = 'NONE', fg = 'NONE' },
+    ['@nospell'] = { bg = 'NONE', fg = 'NONE' },
 
     -- vim.lsp.buf.document_highlight()
     LspReferenceText = { bg = p.highlight_med },
