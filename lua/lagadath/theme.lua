@@ -183,7 +183,7 @@ function M.get()
     ['@variable.builtin'] = { link = 'Special' },
     ['@variable.parameter'] = { link = 'Identifier' },
     ['@variable.parameter.builtin'] = { link = 'Identifier' },
-    ['@variable.member'] = { link = '@variable' },
+    ['@variable.member'] = { fg = blend(p.iris, p.base, 0.6) },
 
     ['@constant'] = { link = 'Constant' },
     ['@constant.builtin'] = { link = 'Special' },
